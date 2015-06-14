@@ -1,0 +1,18 @@
+<html>
+  <head>
+  <script src="http://jwpsrv.com/library/YOUR_JW_PLAYER_ACCOUNT_TOKEN.js" ></script>
+    <title>Playback</title>
+  </head>
+  <body>
+    <div id="myElement">Loading the player...</div>
+<script type="text/javascript">
+var playerInstance = jwplayer("myElement");
+    playerInstance.setup({
+        file: "http://example.com/uploads/myVideo.mp4",
+        image: "http://example.com/uploads/myPoster.jpg",
+        width: 640,
+        height: 360
+    });
+</script>
+  </body>
+</html>
