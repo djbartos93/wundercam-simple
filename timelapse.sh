@@ -9,7 +9,7 @@ cd /var/www/openmediavault/weather/cam-archive/"$foldername"
 mkdir /var/www/openmediavault/weather/timelapse/renamed-temp
 counter=1
 ls -1tr *.jpg | while read filename; do cp $filename renamed-temp/$(printf %05d $counter)_$filename; ((counter++)); done
-cd renamed-temp
+cd /var/www/openmediavault/weather/timelapse/renamed-temp
 
 #now we tell ffmpeg to do its thing
 
@@ -17,4 +17,5 @@ ffmpeg -f image2 -r 5 -i %*.jpg video.mp4
 
 #now that ffmpeg has done its things we need to move the video to a file that we can access.
 
-cp
+#rename it and move it to a new place
+mv video.mp4 /var/www/openmediavault/weather/videos/$foldername.mp4
